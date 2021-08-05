@@ -1,10 +1,22 @@
 import React from 'react'
 
-import { ExampleComponent } from 'usehotkey'
+import { ExampleComponent, useHotkey } from 'usehotkey'
 import 'usehotkey/dist/index.css'
 
-const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
-}
 
-export default App
+
+export default function App() {
+
+  const setTestShortcut = useHotkey("t e")
+
+  function handleClick() {
+    console.log("clicked");
+  }
+
+  return (
+    <div>
+      <ExampleComponent text="Create React Library Example 😄" />
+      <button ref={setTestShortcut} onClick={handleClick} >press t e</button>
+    </div>
+  )
+}
