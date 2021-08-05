@@ -1,5 +1,5 @@
 {
-  "name": "usehotkey",
+  "name": "use-github-hotkey",
   "version": "1.0.0",
   "description": "react hooks of @github/hotkey",
   "author": "smarthug",
@@ -24,11 +24,9 @@
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {
-    "react": "^16.0.0",
-    "@github/hotkey": "^1.4.4"
+    "react": "^16.0.0"
   },
   "devDependencies": {
-    "microbundle-crl": "^0.13.10",
     "babel-eslint": "^10.0.3",
     "cross-env": "^7.0.2",
     "eslint": "^6.8.0",
@@ -42,6 +40,7 @@
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-standard": "^4.0.1",
     "gh-pages": "^2.2.0",
+    "microbundle-crl": "^0.13.10",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.4",
     "react": "^16.13.1",
@@ -50,5 +49,8 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "@github/hotkey": "^1.4.4"
+  }
 }
