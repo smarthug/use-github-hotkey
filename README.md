@@ -1,6 +1,6 @@
 # usehotkey
 
-> Made with create-react-library
+> react hooks of [@github/hotkey](https://github.com/github/hotkey)
 
 [![NPM](https://img.shields.io/npm/v/use-github-hotkey.svg)](https://www.npmjs.com/package/use-github-hotkey) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -41,6 +41,12 @@ export default function App() {
 }
 
 ```
+
+## Feature
+- A react hooks wrapper of [@github/hotkey](https://github.com/github/hotkey)
+- The easiest API possible
+- Coded perfectly for react component lifecycle
+- Supports triggering Function with hotkey. HTML  DOM is not necessary.
 
 ## License
 
