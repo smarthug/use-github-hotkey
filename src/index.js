@@ -35,6 +35,18 @@ export const shortcutMappingObj = {
 };
 
 
+// weak map 스러운걸 사용 ... 
+const shortcutFCMap = {};
+const button = document.createElement('button');
+button.addEventListener("click", func); // event 는 하나여야 하니까 ... map 형태로 가자 ... 
+install(button, shortcut)
+// global 한 weak map 을 사용하는 ????
+export function useFuncHotkey(func = ()=>{}, shortcut=null){
+
+  // 이말인 즉슨 install 도 한번이여야한다는것 ... 
+}
+
+
 // export function fireDeterminedAction(el: HTMLElement): void {
 //     if (isFormField(el)) {
 //         el.focus()
