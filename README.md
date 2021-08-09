@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-npm install --save usehotkey
+npm install use-github-hotkey
 ```
 
 ## Usage
