@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-import { ExampleComponent, useHotkey, useFuncHotkey } from 'usehotkey'
+import { ExampleComponent, useHotkey, installFuncHotkey } from 'usehotkey'
 import 'usehotkey/dist/index.css'
 
 
@@ -8,20 +8,26 @@ import 'usehotkey/dist/index.css'
 export default function App() {
 
   const setTestShortcut = useHotkey("t e")
-  const setFCasShortcut = useFuncHotkey(handleFCClick,"t t")
+  // const setFCasShortcut = useFuncHotkey(handleFCClick,"t t")
+  const fef = installFuncHotkey(handleTTClick, "t t")
+  const feef = installFuncHotkey(handleTFClick, "t f")
 
   function handleClick() {
     console.log("clicked");
   }
 
   // invoke this with hooks ... 
-  function handleFCClick(){
-    console.log("fc clicked");
+  function handleTTClick() {
+    console.log("t t clicked");
   }
 
-  useEffect(()=> {
+  function handleTFClick() {
+    console.log("t f clicked");
+  }
 
-  },[])
+  useEffect(() => {
+
+  }, [])
 
   return (
     <div>
