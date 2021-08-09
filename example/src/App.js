@@ -1,38 +1,26 @@
-import React, { useEffect } from 'react'
-
+import React from 'react'
 import { useHotkey, installFuncHotkey } from 'usehotkey'
-import 'usehotkey/dist/index.css'
-
-
 
 export default function App() {
-
+  // keyboard shortcut with dom
   const setTestShortcut = useHotkey("t e")
-  // const setFCasShortcut = useFuncHotkey(handleFCClick,"t t")
-  const fef = installFuncHotkey(handleTTClick, "t t t")
-  const feef = installFuncHotkey(handleTFClick, "t f")
+
+  // keyboard shortcut with function
+  installFuncHotkey(handleTTClick, "t t")
 
   function handleClick() {
-    console.log("clicked");
+    alert("t e clicked");
   }
 
-  // invoke this with hooks ... 
   function handleTTClick() {
-    console.log("t t clicked");
+    alert("t t clicked");
   }
-
-  function handleTFClick() {
-    console.log("t f clicked");
-  }
-
-  useEffect(() => {
-
-  }, [])
 
   return (
     <div>
-      <button ref={setTestShortcut} onClick={handleClick} >press t e</button>
-      <button>press t t</button>
+      <h1>example</h1>
+      <button ref={setTestShortcut} onClick={handleClick} >press "t e" to click this button with hotkey</button>
+      <h3>press "t t" to invoke function with hotkey</h3>
     </div>
   )
 }
