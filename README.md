@@ -4,6 +4,15 @@
 
 [![NPM](https://img.shields.io/npm/v/use-github-hotkey.svg)](https://www.npmjs.com/package/use-github-hotkey) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+## Feature
+- A react hooks wrapper of [@github/hotkey](https://github.com/github/hotkey)
+- The easiest API possible
+- Coded perfectly for react component lifecycle
+- Supports triggering Function with hotkey. HTML  DOM is not necessary.
+
+## Demo
+https://smarthug.github.io/useHotkey/
+
 ## Install
 
 ```bash
@@ -42,11 +51,7 @@ export default function App() {
 
 ```
 
-## Feature
-- A react hooks wrapper of [@github/hotkey](https://github.com/github/hotkey)
-- The easiest API possible
-- Coded perfectly for react component lifecycle
-- Supports triggering Function with hotkey. HTML  DOM is not necessary.
+
 
 ## License
 
