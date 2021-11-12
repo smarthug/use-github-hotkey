@@ -1,10 +1,29 @@
 import { useEffect, useState } from 'react'
 import { install, uninstall } from "@github/hotkey"
-
+import { doc } from 'prettier'
 
 // export const shortcutMappingObj = {
 //   showCommandPalette: "Control+P",
 // };
+console.log("wtf")
+const buttonProto = {
+  scope: null,
+  get getAttribute() {
+    console.log(this.scope)
+    if (this.scope === null) {
+
+      return () => null
+    } else {
+
+      // return () => this.scope
+      console.log(this.scope)
+      return () => this.scope
+    }
+  },
+  get dispatchEvent() {
+    return mockDispatchEvent
+  }
+}
 
 
 export function useHotkey(shortcut = null) {
@@ -25,66 +44,23 @@ export function useHotkey(shortcut = null) {
 }
 
 
-function mockGetAttribute(attributeName) {
-  // it look up the data-key-scope attribute
-  // this ... 이걸 호출한 , dom 에서 해야하는가 그것이 가능한가 ??
-  console.log(this)
-
-  if (this.scope)
-
-    return null
-}
-
-function mockGetAttributeTrue(scope) {
-
-  return returnScope(scope)
-}
-
-function returnScope(scope) {
-
-  return scope
-}
-
-function mockGetAttributeNull() {
-
-  return null
-}
-
 function mockDispatchEvent() {
 
   return true
 }
 
 // data-key-scope 를 하나 더 넣어줄까 인자로 ???
-export function installFuncHotkey(func = () => { }, shortcut = null, scope = "") {
+export function installFuncHotkey(func = () => { }, shortcut = null, scope = null) {
 
-  const button = {
-    scope: scope,
-    returnAttribute: () => {
-      return this.scope
-    },
-    returnNull: () => {
-      return null
-    },
-    get getAttribute() {
-      if (this.scope === "") {
+  // 아예 가상의 dom 을 만들어볼까 ???
 
-        // return () => null
-        return returnNull
-      } else {
-
-        // return () => this.scope
-        return returnAttribute
-      }
-    },
-    get dispatchEvent() {
-      return mockDispatchEvent
-    },
-
-    get click() {
-      return func
-    }
-  }
+  const ghost = document.createElement('div')
+  document.querySelector("#root").appendChild(ghost)
+  ghost.setAttribute("data-hotkey-scope", scope)
+  ghost.style.display = "none"
+  const button = Object.create(buttonProto)
+  button.scope = scope
+  Object.defineProperty(button, 'click', { get: () => { return func } })
   install(button, shortcut);
 }
 
