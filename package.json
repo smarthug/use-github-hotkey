@@ -1,6 +1,6 @@
 {
   "name": "use-github-hotkey",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "react hooks of @github/hotkey",
   "author": "smarthug",
   "license": "MIT",
