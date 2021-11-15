@@ -1,4 +1,4 @@
-# usehotkey
+# use-github-hotkey
 
 > react hooks of [@github/hotkey](https://github.com/github/hotkey)
 
